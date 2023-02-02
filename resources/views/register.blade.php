@@ -73,15 +73,16 @@
         
       </button>
       <hr>
-      <form class="mform" action="">
+      <form class="mform" method= "POST" action="{{url('upload')}}" enctype="multipart/form-data"> 
+        @csrf
             <label for="mail">ایمیل آدرس تانرا وارد کنید:</label>
-            <input class="form-input" type="email"  placeholder="ahmad@gmail.com" dir="ltr" id="mail" required>
+            <input class="form-input" type="email"  placeholder="example@gmail.com" dir="ltr" id="mail" name = 'email' required>
             <label for="txt">نام کاربری انتخاب کنید:</label>
-            <input class="form-input" type="text"  placeholder="ahmad" dir="ltr" id="txt" required>
+            <input class="form-input" type="text"  placeholder="ahmad" dir="ltr" id="txt" name = 'fullname' required>
             <label for="pass">یک رمز انتخاب کنید: </label>
-            <input class="form-input" type="password" placeholder="letters A-z, numbers 0-9, symbols $#&*" dir="ltr" id="pass" required>
+            <input class="form-input" name="password" type="password" placeholder="letters A-z, numbers 0-9, symbols $#&*" dir="ltr" id="pass" required>
             <label for="vpass">تایٔید رمز</label>
-            <input class="form-input" type="password" id="vpass" required>
+            <input class="form-input" type="password" name = "verify_password" id="vpass" required>
 
             <div>
                 <input type="radio" name="r" id="rb">
@@ -91,7 +92,7 @@
             </div>
             
             <div>
-                <button class="reg">راجستر</button>
+                <button class="reg" type = 'submit'>راجستر</button>
                 <button class="reg">لغو</button>
             </div>
            

@@ -37,3 +37,4 @@ Route::get('/register',[RegisterController::class,'register']);
 
 //login controller
 Route::get('/login',[loginController::class,'login']);
+Route::POST('/upload',[Homecontroller::class,'upload']);
